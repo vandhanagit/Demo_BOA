@@ -22,6 +22,11 @@ driver.find_element_by_class_name("open-account").click()
 no_of_products=driver.find_elements_by_xpath("//div[contains(text(),'started')]")
 print("No of services available are " + str(len(no_of_products)))
 
+products_avialable=driver.find_elements_by_xpath("//div[@class='title-container']/h4")
+
+for pro in products_avialable:
+    print(pro.text)
+
 driver.find_element_by_xpath("//div[contains(text(),'started')]").click()
 driver.implicitly_wait(4)
 driver.find_element_by_xpath("//a[@class='open-cta']").click()
